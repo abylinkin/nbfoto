@@ -28,15 +28,11 @@
       font-weight: bold;
     }
     .hero {
-      background: url('img/nbfoto.jpg') center center no-repeat;
-      background-size: contain;
-      background-color: #000;
-      padding: 6em 2em;
-      text-align: center;
-      min-height: 600px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-wrap: wrap;
+      align-items: stretch;
+      background: #000;
+      min-height: 500px;
     }
     .section {
       padding: 2em;
@@ -106,8 +102,11 @@
   </header>
 
   <div class="hero">
-    <h1>Professional Photography in Bergen</h1>
-    <p>Family, weddings, events – memories made timeless</p>
+    <div style="flex: 1; min-width: 300px; background: url('img/nbfoto.jpg') center center no-repeat; background-size: cover;"></div>
+    <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2em; color: white; text-align: center;">
+      <h1>Professional Photography in Bergen</h1>
+      <p>Family, weddings, events – memories made timeless</p>
+    </div>
   </div>
 
   <div class="section" id="about">
@@ -168,3 +167,4 @@
   </footer>
 </body>
 </html>
+
