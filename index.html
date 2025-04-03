@@ -143,12 +143,20 @@
 
   <div class="section" id="contact">
     <h2>Contact & Booking</h2>
-    <div style="margin: 0.5em 0;">
+    <form action="mailto:example@example.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <input type="text" name="phone" placeholder="Your phone number (optional)">
+      <textarea name="message" rows="5" placeholder="Tell us what you need"></textarea>
+      <div style="margin: 0.5em 0;">
         <label>
           <input type="checkbox" name="consent">
           I agree that selected photos from my session may be used for NB Foto’s portfolio and website.
         </label>
       </div>
+      <button type="submit">Send</button>
+    </form>
+  </div>
       
     </form>
   </div>
@@ -167,4 +175,5 @@
   </footer>
 </body>
 </html>
+
 
