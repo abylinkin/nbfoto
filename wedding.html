@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NB Foto - Wedding Gallery</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1.5em;
+      text-align: center;
+      z-index: 10;
+    }
+    .overlay h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .overlay p {
+      margin-top: 0.5em;
+    }
+    .gallery {
+      margin-top: 160px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 1em;
+    }
+    .gallery img {
+      width: 300px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    a.back-link {
+      display: block;
+      margin: 2em;
+      color: #ccc;
+      text-align: center;
+      text-decoration: none;
+    }
+    a.back-link:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Wedding Photography</h1>
+    <p>3-Hour Package: 5500 NOK &nbsp;&nbsp;|&nbsp;&nbsp; Full Day: 12 000 NOK<br>Includes all good photos with basic color correction.</p>
+  </div>
+
+  <div class="gallery">
+    <img src="img/wedding1.jpg" alt="Wedding photo 1">
+    <img src="img/wedding2.jpg" alt="Wedding photo 2">
+    <img src="img/wedding3.jpg" alt="Wedding photo 3">
+    <img src="img/wedding4.jpg" alt="Wedding photo 4">
+    <img src="img/wedding5.jpg" alt="Wedding photo 5">
+  </div>
+
+  <a class="back-link" href="index.html">← Back to main site</a>
+</body>
+</html>
