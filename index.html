@@ -137,31 +137,34 @@
     <p>Travel for the photo shoot to client's location is paid extra based on the distance from Bergen City Center (250 NOK / hour + actual transport costs).</p>
   </div>
 
-  <div class="section" id="contact">
-    <h2>Contact & Booking</h2>
-    
-      <input type="hidden" name="redirect" value="/thank-you.html">
-      <input type="hidden" name="form-name" value="contact">
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="email" placeholder="Your email" required>
-      <input type="text" name="phone" placeholder="Your phone number (optional)">
-      <textarea name="message" rows="5" placeholder="Tell us what you need"></textarea>
-      <div style="margin: 0.5em 0;">
-        <label>
-          <input type="checkbox" name="consent">
-          I agree that selected photos from my session may be used for NB Foto’s portfolio and website.
-        </label>
-      </div>
-      <div data-netlify-recaptcha="true" style="margin: 1em 0;"></div>
-      <button type="submit">Send</button>
-    </form>
-  </div>
+<div class="section" id="contact">
+  <h2>Contact & Booking</h2>
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <input type="hidden" name="redirect" value="/thank-you.html">
+    <p style="display: none;">
+      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+    </p>
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Your email" required>
+    <input type="text" name="phone" placeholder="Your phone number (optional)">
+    <textarea name="message" rows="5" placeholder="Tell us what you need"></textarea>
+    <div style="margin: 0.5em 0;">
+      <label>
+        <input type="checkbox" name="consent">
+        I agree that selected photos from my session may be used for NB Foto’s portfolio and website.
+      </label>
+    </div>
+    <div data-netlify-recaptcha="true" style="margin: 1em 0;"></div>
+    <button type="submit">Send</button>
+  </form>
+</div>
 
   <footer>
     <br><br>
     <div style="font-size: 0.9em; line-height: 1.6;">
       Natalie Bylinkina ENK<br>
-      Nøstegaten 50B, 0704<br>
+      Nøstegaten 50B<br>
       5011 Bergen<br>
       +47 920 22 914<br>
       <a href="mailto:natalie.bylinkina@gmail.com" style="color: white; text-decoration: underline;">natalie.bylinkina@gmail.com</a><br>
