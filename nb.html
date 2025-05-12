@@ -119,19 +119,23 @@
   </style>
 </head>
 <body>
-  <header>
-    <div>Norges Beste Foto</div>
-    <nav>
+
+  <header style="position: relative;">
+  <div style="display: flex; align-items: center;">
+    <div style="margin-right: 2em; font-weight: bold;">Norges Beste Foto</div>
+    <nav style="display: flex; gap: 1em;">
       <a href="#about">Om</a>
       <a href="#gallery">Galleri</a>
       <a href="#prices">Priser</a>
       <a href="#contact">Kontakt</a>
     </nav>
-    <div class="language-toggle">
-      <button onclick="switchLanguage()">🇬🇧 English</button>
-    </div>
-  </header>
+  </div>
+  <div class="language-toggle">
+    <button onclick="switchLanguage()">🇬🇧 English</button>
+  </div>
+</header>
 
+  
   <div class="hero">
     <div style="flex: 1; min-width: 300px; background: url('img/nbfoto.jpg') center center no-repeat; background-size: cover;"></div>
     <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2em; color: white; text-align: center;">
