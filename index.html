@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Norges Beste Foto - Photography in Bergen</title>
+  <title>NB Foto - Photography in Bergen</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -17,9 +17,6 @@
       background: #2b2d42;
       color: white;
       padding: 1em 2em;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
     nav a {
       color: white;
@@ -28,9 +25,7 @@
       font-weight: bold;
     }
     .language-toggle {
-      position: absolute;
-      top: 1em;
-      right: 1em;
+      margin-left: auto;
     }
     .language-toggle button {
       background: transparent;
@@ -116,24 +111,57 @@
       font-weight: bold;
       text-align: center;
     }
+
+    @media (max-width: 768px) {
+      header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      header > div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1em;
+        margin-top: 0.5em;
+      }
+      .hero {
+        flex-direction: column;
+        min-height: auto;
+      }
+      .hero > div:first-child {
+        min-height: 250px;
+        background-position: top center;
+      }
+      .hero > div:last-child {
+        padding: 1.5em;
+      }
+    }
   </style>
 </head>
 <body>
-<header style="position: relative;">
-  <div style="display: flex; align-items: center;">
-    <div style="margin-right: 2em; font-weight: bold;">Norges Beste Foto</div>
-    <nav style="display: flex; gap: 1em;">
+  <header>
+    <div>
+      <div style="font-weight: bold;">NB Foto</div>
+      <div class="language-toggle">
+        <button onclick="switchLanguage()">🇳🇴 Norsk</button>
+      </div>
+    </div>
+    <nav>
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
       <a href="#prices">Prices</a>
       <a href="#contact">Contact</a>
     </nav>
-  </div>
-  <div class="language-toggle">
-    <button onclick="switchLanguage()">🇳🇴 Norsk</button>
-  </div>
-</header>
-
+  </header>
 
   <div class="hero">
     <div style="flex: 1; min-width: 300px; background: url('img/nbfoto.jpg') center center no-repeat; background-size: cover;"></div>
@@ -175,7 +203,6 @@
     <h2>Contact & Booking</h2>
     <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact">
-      <input type="hidden" name="redirect" value="/thank-you.html">
       <p style="display: none;">
         <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
       </p>
@@ -207,10 +234,8 @@
     </div>
   </footer>
 
-  <!-- Popup message -->
   <div id="popup">✅ Message sent!</div>
 
-  <!-- Form submission script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const form = document.querySelector("form[name='contact']");
@@ -234,12 +259,6 @@
         })
         .catch((error) => alert("Oops! There was a problem: " + error));
       });
-
-      // Auto-language redirect based on browser language
-      const lang = navigator.language || navigator.userLanguage;
-      if (lang.startsWith("nb") || lang.startsWith("no")) {
-        window.location.href = "/nb.html";
-      }
     });
 
     function switchLanguage() {
