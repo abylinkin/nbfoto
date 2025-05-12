@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NB Foto - Fotograf i Bergen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background: #2b2d42;
+      color: white;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      margin-left: 1em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .language-toggle {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+    }
+    .language-toggle button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      background: #000;
+      min-height: 500px;
+    }
+    .section {
+      padding: 2em;
+      background: white;
+      margin: 1em auto;
+      max-width: 900px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2b2d42;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5em;
+      margin-top: 1em;
+    }
+    .card {
+      background: #f0f0f0;
+      padding: 1em;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .card a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: #2b2d42;
+      color: white;
+      margin-top: 3em;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    form input, form textarea {
+      margin: 0.5em 0;
+      padding: 0.75em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      padding: 0.75em;
+      background: #2b2d42;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #2b2d42;
+      color: white;
+      padding: 1.25em 2em;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      z-index: 9999;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>NB Foto</div>
+    <nav>
+      <a href="#about">Om</a>
+      <a href="#gallery">Galleri</a>
+      <a href="#prices">Priser</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+    <div class="language-toggle">
+      <button onclick="switchLanguage()">🇬🇧 English</button>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div style="flex: 1; min-width: 300px; background: url('img/nbfoto.jpg') center center no-repeat; background-size: cover;"></div>
+    <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2em; color: white; text-align: center;">
+      <h1>Profesjonell fotografering i Bergen</h1>
+      <p>Familie, bryllup, arrangementer – minner for livet</p>
+    </div>
+  </div>
+
+  <div class="section" id="about">
+    <h2>Hva gjør NB Foto spesiell?</h2>
+    <p>Ulikt mange fotografer leverer jeg <strong>alle gode bilder med grunnleggende fargekorrigering gratis</strong> – ingen skjulte kostnader, bare vakre minner.</p>
+    <p>Flerspråklig støtte: Norsk, Engelsk, Russisk.</p>
+  </div>
+
+  <div class="section" id="gallery">
+    <h2>Fotokategorier</h2>
+    <div class="grid">
+      <div class="card"><a href="family.html">Familie og barn</a></div>
+      <div class="card"><a href="confirmation.html">Konfirmasjon</a></div>
+      <div class="card"><a href="wedding.html">Bryllup</a></div>
+      <div class="card"><a href="maternity.html">Gravidfotografering</a></div>
+      <div class="card"><a href="portrait.html">Portretter</a></div>
+      <div class="card"><a href="business.html">Business & CV-bilder</a></div>
+    </div>
+  </div>
+
+  <div class="section" id="prices">
+    <h2>Prisoversikt</h2>
+    <ul>
+      <li>1 times fotosesjon: 1100 NOK</li>
+    </ul>
+    <p>Alle sesjoner inkluderer levering av 3 profesjonelt retusjerte bilder og alle gode bilder med grunnleggende fargekorrigering – uten ekstra kostnad.</p>
+    <p>Ytterligere retusjering kan avtales mot tillegg i pris.</p>
+    <p>Reise til kundens lokasjon faktureres etter avstand fra Bergen sentrum (250 NOK/time + faktiske transportkostnader).</p>
+  </div>
+
+  <div class="section" id="contact">
+    <h2>Kontakt og bestilling</h2>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display: none;">
+        <label>Ikke fyll ut dette hvis du er et menneske: <input name="bot-field" /></label>
+      </p>
+      <input type="text" name="name" placeholder="Ditt navn" required>
+      <input type="email" name="email" placeholder="Din e-post" required>
+      <input type="text" name="phone" placeholder="Telefonnummer (valgfritt)">
+      <textarea name="message" rows="5" placeholder="Hva ønsker du hjelp med?"></textarea>
+      <div style="margin: 0.5em 0;">
+        <label>
+          <input type="checkbox" name="consent">
+          Jeg godtar at utvalgte bilder fra min fotosesjon kan brukes i NB Fotos portefølje og nettside.
+        </label>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <footer>
+    <br><br>
+    <div style="font-size: 0.9em; line-height: 1.6;">
+      Natalie Bylinkina ENK<br>
+      Nøstegaten 50B<br>
+      5011 Bergen<br>
+      +47 920 22 914<br>
+      <a href="mailto:natalie.bylinkina@gmail.com" style="color: white; text-decoration: underline;">natalie.bylinkina@gmail.com</a><br>
+      <a href="https://www.facebook.com/natalie.bylinkina.photography" target="_blank" style="color: white; text-decoration: underline;">facebook.com/natalie.bylinkina.photography</a><br>
+      Orgnr: 929203763<br>
+      Registrert i foretaksregisteret
+    </div>
+  </footer>
+
+  <div id="popup">✅ Melding sendt!</div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("form[name='contact']");
+      const popup = document.getElementById("popup");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const data = new FormData(form);
+
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(data).toString()
+        })
+        .then(() => {
+          form.reset();
+          popup.style.display = "block";
+          setTimeout(() => {
+            popup.style.display = "none";
+          }, 4000);
+        })
+        .catch((error) => alert("Noe gikk galt: " + error));
+      });
+    });
+
+    function switchLanguage() {
+      window.location.href = "/index.html";
+    }
+  </script>
+</body>
+</html>
